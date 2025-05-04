@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - V-Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <img src="logo.png" alt="Logo Grupo Águia Branca" class="logo" />
+    </div>
+    <div class="right-panel">
+      <div class="login-box">
+        <h1>V-Project</h1>
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label for="username">Usuário ou Email</label>
+          <input type="text" id="username" required />
+
+          <label for="password">Senha</label>
+          <input type="password" id="password" required />
+
+          <button type="submit">Entrar</button>
+        </form>
+        <p class="register-link">
+          Não possui conta? <a href="/register.html">Solicite seu acesso no portal SOS</a>
+        </p>
+        <p id="message"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

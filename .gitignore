@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+.env
+*.log
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Outros
+/public/logo.png
