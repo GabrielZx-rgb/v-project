@@ -8,12 +8,17 @@
 </head>
 <body>
   <!-- Menu lateral -->
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
+    <button class="menu-toggle" onclick="toggleSidebar()">☰ Menu</button>
     <h1>V-Project</h1>
-    <ul>
-      <li>📂 Importar Processos</li>
-      <li>📊 Dashboard</li>
-      <li>⚙️ Configurações</li>
+    <ul class="menu-list">
+      <li><i class="icon">📁</i> <span>Todos os processos</span> <span>0</span></li>
+      <li><i class="icon">📁</i> <span>Não atribuído</span> <span>0</span></li>
+      <li><i class="icon">📁</i> <span>Não iniciado</span> <span>0</span></li>
+      <li><i class="icon">📁</i> <span>Em andamento</span> <span>0</span></li>
+      <li><i class="icon">📁</i> <span>Incluso</span> <span>0</span></li>
+      <li><i class="icon">📁</i> <span>Devolvido</span> <span>0</span></li>
+      <li><i class="icon">📁</i> <span>Concluído</span> <span>0</span></li>
     </ul>
   </aside>
 
@@ -40,7 +45,13 @@
     </section>
   </main>
 
+  <!-- Script completo -->
   <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("collapsed");
+    }
+
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileUpload');
     const feedbackMessage = document.getElementById('feedbackMessage');
@@ -62,7 +73,6 @@
         fileInput.files = files;
         feedbackMessage.textContent = `Arquivo "${files[0].name}" selecionado com sucesso!`;
         feedbackMessage.style.color = 'green';
-        // Aqui você pode fazer o upload usando fetch ou FormData
       }
     });
 

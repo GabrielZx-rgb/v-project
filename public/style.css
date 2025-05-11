@@ -1,5 +1,4 @@
-/* Reset básico */
-* {
+/* Reset básico */ * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -227,4 +226,59 @@ header button {
 	.main-content {
 		margin-left: 0;
 	}
+}
+
+/* -------------------- Sidebar colapsável -------------------- */
+
+.sidebar.collapsed {
+	width: 60px;
+	overflow: hidden;
+	transition: width 0.3s ease;
+}
+
+.sidebar.collapsed h1,
+.sidebar.collapsed ul li span {
+	display: none;
+}
+
+.menu-toggle {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 18px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	width: 100%;
+	text-align: left;
+}
+
+.menu-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-list li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 8px;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.2s;
+	white-space: nowrap;
+}
+
+.menu-list li:hover {
+	background-color: #2a4f99;
+}
+
+.menu-list .icon {
+	margin-right: 8px;
+}
+
+/* Quando a sidebar está recolhida, o conteúdo principal se ajusta */
+.sidebar.collapsed ~ .main-content {
+	margin-left: 60px;
 }
