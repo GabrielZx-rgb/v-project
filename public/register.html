@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cadastro</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
@@ -18,12 +19,16 @@
     button:hover { background-color: #284b74; }
     .login-link { font-size: 14px; }
     .login-link a { color: #fff; text-decoration: underline; }
+    .message { color: red; font-weight: bold; margin-top: 10px; }
   </style>
 </head>
 <body>
+  <!-- Seção esquerda com o logo -->
   <div class="left-side">
-    <img src="/logo.png" alt="Logo Grupo Águia Branca" />
+    <img src="/logo.png" alt="Logo da empresa Grupo Águia Branca" />
   </div>
+
+  <!-- Seção direita com o formulário de cadastro -->
   <div class="right-side">
     <h1>V-Project</h1>
     <h2>Cadastro</h2>
@@ -35,11 +40,12 @@
       <input type="email" id="email" name="email" placeholder="Seu email" required />
 
       <label for="password">Senha</label>
-      <input type="password" id="password" name="password" placeholder="Sua senha" required />
+      <input type="password" id="password" name="password" placeholder="Sua senha" autocomplete="off" required />
 
       <button type="submit">Cadastrar</button>
     </form>
     <p class="login-link">Já possui conta? <a href="/login.html">Acesse aqui</a></p>
+    <p id="message" class="message"></p>
   </div>
 
   <script>

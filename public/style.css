@@ -1,7 +1,19 @@
-body {
+/* Reset básico */
+* {
 	margin: 0;
-	font-family: Arial, sans-serif;
+	padding: 0;
+	box-sizing: border-box;
 }
+
+body,
+html {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	height: 100%;
+	background-color: #f5f7fa;
+	color: #333;
+}
+
+/* -------------------- Login -------------------- */
 
 .container {
 	display: flex;
@@ -10,79 +22,209 @@ body {
 
 .left-panel {
 	flex: 1;
-	background: #fff;
+	background-color: #ffffff; /* Fundo branco para a área da logo */
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
 }
 
-.logo {
-	max-width: 60%;
+.left-panel .logo {
+	width: 180px;
 }
 
 .right-panel {
 	flex: 1;
-	background: #213c61;
-	color: white;
+	background-color: #003366; /* Fundo azul para a área de cadastro */
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+	color: #fff; /* Texto branco para contraste */
 }
 
 .login-box {
-	width: 300px;
-	text-align: center;
+	width: 100%;
+	max-width: 400px;
+	background: #fff;
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .login-box h1 {
-	font-size: 24px;
-	margin-bottom: 10px;
+	font-size: 2rem;
+	color: #003366;
+	margin-bottom: 0.5rem;
 }
 
 .login-box h2 {
-	font-size: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 1.5rem;
+	font-size: 1.2rem;
+	color: #555;
 }
 
-form {
-	display: flex;
-	flex-direction: column;
+.login-box label {
+	display: block;
+	margin-bottom: 0.5rem;
+	margin-top: 1rem;
+	font-weight: 500;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-	padding: 10px;
-	margin-bottom: 15px;
+.login-box input {
+	width: 100%;
+	padding: 0.75rem;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	font-size: 1rem;
+}
+
+.login-box button {
+	width: 100%;
+	padding: 0.75rem;
+	background-color: #003366;
+	color: #fff;
 	border: none;
 	border-radius: 4px;
-	width: 100%;
-}
-
-button {
-	padding: 10px;
-	border: 1px solid white;
-	background: none;
-	color: white;
-	border-radius: 20px;
+	font-weight: bold;
+	font-size: 1rem;
+	margin-top: 1.5rem;
 	cursor: pointer;
+	transition: background 0.3s;
 }
 
-button:hover {
-	background: white;
-	color: #213c61;
+.login-box button:hover {
+	background-color: #00509e;
 }
 
 .register-link {
-	font-size: 12px;
-	margin-top: 15px;
+	margin-top: 1rem;
+	text-align: center;
+	font-size: 0.9rem;
 }
 
 .register-link a {
-	color: #aad6ff;
+	color: #00509e;
 	text-decoration: none;
 }
 
-.register-link a:hover {
+/* -------------------- Import -------------------- */
+
+.sidebar {
+	position: fixed;
+	width: 220px;
+	height: 100%;
+	background-color: #003366;
+	color: #fff;
+	padding: 1.5rem 1rem;
+}
+
+.sidebar h1 {
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.sidebar ul {
+	list-style: none;
+}
+
+.sidebar li {
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+.sidebar li:hover {
 	text-decoration: underline;
+}
+
+.main-content {
+	margin-left: 220px;
+	padding: 2rem;
+}
+
+header nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+header button {
+	padding: 0.5rem 1rem;
+	border: none;
+	background-color: #003366;
+	color: white;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.import-area {
+	background-color: #fff;
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+	max-width: 600px;
+}
+
+.import-area h2 {
+	margin-bottom: 1rem;
+}
+
+.drop-zone {
+	border: 2px dashed #999;
+	border-radius: 6px;
+	padding: 2rem;
+	text-align: center;
+	background-color: #fafafa;
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s;
+}
+
+.drop-zone.dragover {
+	background-color: #eef5ff;
+	border-color: #00509e;
+}
+
+.file-label {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 0.6rem 1.2rem;
+	background-color: #00509e;
+	color: #fff;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.hint {
+	margin-top: 0.5rem;
+	color: #666;
+	font-size: 0.9rem;
+}
+
+/* -------------------- Responsivo -------------------- */
+
+@media (max-width: 768px) {
+	.container {
+		flex-direction: column;
+	}
+
+	.left-panel {
+		display: none;
+	}
+
+	.right-panel {
+		flex: 1;
+		width: 100%;
+		padding: 2rem 1rem;
+	}
+
+	.sidebar {
+		position: relative;
+		width: 100%;
+		height: auto;
+	}
+
+	.main-content {
+		margin-left: 0;
+	}
 }

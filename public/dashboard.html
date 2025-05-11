@@ -2,10 +2,50 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - V-Project</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>BEM VINDO AO MEU SITE!</h1>
-  <p>OBRIGADO POR ACESSAR MEU SITE.</p>
+  <!-- Menu lateral -->
+  <aside class="sidebar">
+    <h1>V-Project</h1>
+    <ul>
+      <li><a href="/import.html">📂 Importar Processos</a></li>
+      <li><a href="/dashboard.html" class="active">📊 Dashboard</a></li>
+      <li><a href="/settings.html">⚙️ Configurações</a></li>
+    </ul>
+  </aside>
+
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <!-- Cabeçalho -->
+    <header>
+      <nav>
+        <span>Olá, Usuário</span>
+        <button onclick="alert('Sair ainda não implementado')">Sair</button>
+      </nav>
+    </header>
+
+    <!-- Área do Dashboard -->
+    <section class="dashboard-area">
+      <h2>Dashboard</h2>
+      <p>Bem-vindo ao painel de controle do V-Project!</p>
+      <div class="stats">
+        <div class="stat">
+          <h3>120</h3>
+          <p>Processos Importados</p>
+        </div>
+        <div class="stat">
+          <h3>45</h3>
+          <p>Processos Pendentes</p>
+        </div>
+        <div class="stat">
+          <h3>75</h3>
+          <p>Processos Concluídos</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
-</html>
+</html>>

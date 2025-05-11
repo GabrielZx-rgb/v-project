@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Importar Processos - V-Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Menu lateral -->
+  <aside class="sidebar">
+    <h1>V-Project</h1>
+    <ul>
+      <li>📂 Importar Processos</li>
+      <li>📊 Dashboard</li>
+      <li>⚙️ Configurações</li>
+    </ul>
+  </aside>
+
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <!-- Cabeçalho -->
+    <header>
+      <nav>
+        <span>Olá, Usuário</span>
+        <button onclick="alert('Sair ainda não implementado')">Sair</button>
+      </nav>
+    </header>
+
+    <!-- Área de importação -->
+    <section class="import-area">
+      <h2>Importar Processos</h2>
+      <div class="drop-zone" id="dropZone">
+        <p>Arraste e solte o arquivo aqui</p>
+        <label for="fileUpload" class="file-label" title="Clique para selecionar um arquivo">Ou clique para selecionar</label>
+        <input type="file" id="fileUpload" hidden />
+        <p class="hint">Formatos aceitos: .xlsx, .csv</p>
+      </div>
+      <p id="feedbackMessage" class="message"></p>
+    </section>
+  </main>
+
+  <script>
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileUpload');
+    const feedbackMessage = document.getElementById('feedbackMessage');
+
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        fileInput.files = files;
+        feedbackMessage.textContent = `Arquivo "${files[0].name}" selecionado com sucesso!`;
+        feedbackMessage.style.color = 'green';
+        // Aqui você pode fazer o upload usando fetch ou FormData
+      }
+    });
+
+    document.querySelector('.file-label').addEventListener('click', () => {
+      fileInput.click();
+    });
+  </script>
+</body>
+</html>
